@@ -1,0 +1,8 @@
+F:\Documents\SharpDevelop Projects\Youtube-DL\Youtube-DL\obj\Debug\Youtube-DL.csprojResolveAssemblyReference.cache
+F:\Documents\SharpDevelop Projects\Youtube-DL\Youtube-DL\obj\Debug\Youtube_DL.MainForm.resources
+F:\Documents\SharpDevelop Projects\Youtube-DL\Youtube-DL\obj\Debug\Youtube-DL.csproj.GenerateResource.Cache
+F:\Documents\SharpDevelop Projects\Youtube-DL\Youtube-DL\bin\Debug\Youtube-DLGUI.exe.config
+F:\Documents\SharpDevelop Projects\Youtube-DL\Youtube-DL\bin\Debug\Youtube-DLGUI.exe
+F:\Documents\SharpDevelop Projects\Youtube-DL\Youtube-DL\bin\Debug\Youtube-DLGUI.pdb
+F:\Documents\SharpDevelop Projects\Youtube-DL\Youtube-DL\obj\Debug\Youtube-DLGUI.exe
+F:\Documents\SharpDevelop Projects\Youtube-DL\Youtube-DL\obj\Debug\Youtube-DLGUI.pdb
