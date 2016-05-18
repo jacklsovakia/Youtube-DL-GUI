@@ -93,7 +93,7 @@ namespace Youtube_DL
 					}
 					else
 					{
-						if(comboBox1.Items[comboBox1.SelectedIndex] == "" || comboBox1.Items[comboBox1.SelectedIndex] == "Choose one:")
+						if(comboBox1.Items[comboBox1.SelectedIndex] == "Choose one:")
 						{
 							MessageBox.Show("Bad Quality", "Bad Input");
 						}
@@ -141,7 +141,8 @@ namespace Youtube_DL
 		void SaveFileDialog1FileOk(object sender, System.ComponentModel.CancelEventArgs e)
 		{
 			outputtemplatecheck.Checked = true;
-			outputtemplatebox.Text = "\"" + saveFileDialog1.FileName + ".%(ext)s\"";
+			outputtemplatebox.Text = saveFileDialog1.FileName + ".%(ext)s";
+			DownloadButtonClick(null,EventArgs.Empty);
 		}
 		void SaveasButtonClick(object sender, EventArgs e)
 		{
