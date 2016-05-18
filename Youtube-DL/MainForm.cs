@@ -132,5 +132,20 @@ namespace Youtube_DL
 		{
 			Process.Start("list.bat", "\"" + urlBox.Text + "\"");
 		}
+		void GoButtonClick(object sender, EventArgs e)
+		{
+			try{
+			webBrowser1.Navigate(urlBox.Text);
+			}catch{}
+		}
+		void SaveFileDialog1FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			outputtemplatecheck.Checked = true;
+			outputtemplatebox.Text = "\"" + saveFileDialog1.FileName + ".%(ext)s\"";
+		}
+		void SaveasButtonClick(object sender, EventArgs e)
+		{
+			saveFileDialog1.ShowDialog();
+		}
 	}
 }

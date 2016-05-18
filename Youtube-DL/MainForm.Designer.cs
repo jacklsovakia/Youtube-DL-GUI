@@ -50,6 +50,9 @@ namespace Youtube_DL
 		private System.Windows.Forms.CheckBox usercheck;
 		private System.Windows.Forms.Button DownloadButton;
 		private System.Windows.Forms.Button listqualbutton;
+		private System.Windows.Forms.Button goButton;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+		private System.Windows.Forms.Button saveasButton;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -78,6 +81,7 @@ namespace Youtube_DL
 			this.YTButton = new System.Windows.Forms.Button();
 			this.urlBox = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.goButton = new System.Windows.Forms.Button();
 			this.updButton = new System.Windows.Forms.Button();
 			this.flagoptbox = new System.Windows.Forms.TextBox();
 			this.flagoptboxlabel = new System.Windows.Forms.Label();
@@ -109,6 +113,8 @@ namespace Youtube_DL
 			this.usercheck = new System.Windows.Forms.CheckBox();
 			this.DownloadButton = new System.Windows.Forms.Button();
 			this.listqualbutton = new System.Windows.Forms.Button();
+			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+			this.saveasButton = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.authgroupbox.SuspendLayout();
 			this.SuspendLayout();
@@ -132,7 +138,7 @@ namespace Youtube_DL
 			this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
 			this.webBrowser1.Name = "webBrowser1";
 			this.webBrowser1.ScriptErrorsSuppressed = true;
-			this.webBrowser1.Size = new System.Drawing.Size(861, 605);
+			this.webBrowser1.Size = new System.Drawing.Size(1181, 785);
 			this.webBrowser1.TabIndex = 1;
 			this.webBrowser1.Url = new System.Uri("http://youtube.com", System.UriKind.Absolute);
 			this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.WebBrowser1Navigated);
@@ -153,8 +159,7 @@ namespace Youtube_DL
 			| System.Windows.Forms.AnchorStyles.Right)));
 			this.urlBox.Location = new System.Drawing.Point(169, 20);
 			this.urlBox.Name = "urlBox";
-			this.urlBox.ReadOnly = true;
-			this.urlBox.Size = new System.Drawing.Size(698, 20);
+			this.urlBox.Size = new System.Drawing.Size(937, 20);
 			this.urlBox.TabIndex = 3;
 			// 
 			// groupBox1
@@ -162,22 +167,34 @@ namespace Youtube_DL
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 			| System.Windows.Forms.AnchorStyles.Left) 
 			| System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Controls.Add(this.goButton);
+			this.groupBox1.Controls.Add(this.YTButton);
 			this.groupBox1.Controls.Add(this.backButton);
 			this.groupBox1.Controls.Add(this.urlBox);
 			this.groupBox1.Controls.Add(this.webBrowser1);
-			this.groupBox1.Controls.Add(this.YTButton);
 			this.groupBox1.Location = new System.Drawing.Point(12, 12);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.groupBox1.Size = new System.Drawing.Size(873, 657);
+			this.groupBox1.Size = new System.Drawing.Size(1193, 837);
 			this.groupBox1.TabIndex = 4;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Browser";
 			// 
+			// goButton
+			// 
+			this.goButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.goButton.Location = new System.Drawing.Point(1112, 18);
+			this.goButton.Name = "goButton";
+			this.goButton.Size = new System.Drawing.Size(75, 23);
+			this.goButton.TabIndex = 4;
+			this.goButton.Text = "Go";
+			this.goButton.UseVisualStyleBackColor = true;
+			this.goButton.Click += new System.EventHandler(this.GoButtonClick);
+			// 
 			// updButton
 			// 
 			this.updButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.updButton.Location = new System.Drawing.Point(891, 12);
+			this.updButton.Location = new System.Drawing.Point(1211, 12);
 			this.updButton.Name = "updButton";
 			this.updButton.Size = new System.Drawing.Size(133, 23);
 			this.updButton.TabIndex = 5;
@@ -188,7 +205,7 @@ namespace Youtube_DL
 			// flagoptbox
 			// 
 			this.flagoptbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.flagoptbox.Location = new System.Drawing.Point(895, 465);
+			this.flagoptbox.Location = new System.Drawing.Point(1215, 465);
 			this.flagoptbox.Name = "flagoptbox";
 			this.flagoptbox.Size = new System.Drawing.Size(361, 20);
 			this.flagoptbox.TabIndex = 6;
@@ -196,7 +213,7 @@ namespace Youtube_DL
 			// flagoptboxlabel
 			// 
 			this.flagoptboxlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.flagoptboxlabel.Location = new System.Drawing.Point(895, 444);
+			this.flagoptboxlabel.Location = new System.Drawing.Point(1215, 444);
 			this.flagoptboxlabel.Name = "flagoptboxlabel";
 			this.flagoptboxlabel.Size = new System.Drawing.Size(100, 18);
 			this.flagoptboxlabel.TabIndex = 7;
@@ -205,7 +222,7 @@ namespace Youtube_DL
 			// playliststartcheck
 			// 
 			this.playliststartcheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.playliststartcheck.Location = new System.Drawing.Point(891, 71);
+			this.playliststartcheck.Location = new System.Drawing.Point(1211, 71);
 			this.playliststartcheck.Name = "playliststartcheck";
 			this.playliststartcheck.Size = new System.Drawing.Size(104, 24);
 			this.playliststartcheck.TabIndex = 8;
@@ -215,7 +232,7 @@ namespace Youtube_DL
 			// playliststartbox
 			// 
 			this.playliststartbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.playliststartbox.Location = new System.Drawing.Point(995, 73);
+			this.playliststartbox.Location = new System.Drawing.Point(1315, 73);
 			this.playliststartbox.Name = "playliststartbox";
 			this.playliststartbox.Size = new System.Drawing.Size(257, 20);
 			this.playliststartbox.TabIndex = 9;
@@ -223,7 +240,7 @@ namespace Youtube_DL
 			// playlistendbox
 			// 
 			this.playlistendbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.playlistendbox.Location = new System.Drawing.Point(995, 99);
+			this.playlistendbox.Location = new System.Drawing.Point(1315, 99);
 			this.playlistendbox.Name = "playlistendbox";
 			this.playlistendbox.Size = new System.Drawing.Size(257, 20);
 			this.playlistendbox.TabIndex = 11;
@@ -231,7 +248,7 @@ namespace Youtube_DL
 			// playlistendcheck
 			// 
 			this.playlistendcheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.playlistendcheck.Location = new System.Drawing.Point(891, 97);
+			this.playlistendcheck.Location = new System.Drawing.Point(1211, 97);
 			this.playlistendcheck.Name = "playlistendcheck";
 			this.playlistendcheck.Size = new System.Drawing.Size(104, 24);
 			this.playlistendcheck.TabIndex = 10;
@@ -243,7 +260,7 @@ namespace Youtube_DL
 			this.disableplaylistcheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.disableplaylistcheck.Checked = true;
 			this.disableplaylistcheck.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.disableplaylistcheck.Location = new System.Drawing.Point(891, 41);
+			this.disableplaylistcheck.Location = new System.Drawing.Point(1211, 41);
 			this.disableplaylistcheck.Name = "disableplaylistcheck";
 			this.disableplaylistcheck.Size = new System.Drawing.Size(122, 24);
 			this.disableplaylistcheck.TabIndex = 12;
@@ -253,7 +270,7 @@ namespace Youtube_DL
 			// ratelimitbox
 			// 
 			this.ratelimitbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.ratelimitbox.Location = new System.Drawing.Point(995, 129);
+			this.ratelimitbox.Location = new System.Drawing.Point(1315, 129);
 			this.ratelimitbox.Name = "ratelimitbox";
 			this.ratelimitbox.Size = new System.Drawing.Size(257, 20);
 			this.ratelimitbox.TabIndex = 14;
@@ -261,7 +278,7 @@ namespace Youtube_DL
 			// ratelimitcheck
 			// 
 			this.ratelimitcheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.ratelimitcheck.Location = new System.Drawing.Point(891, 127);
+			this.ratelimitcheck.Location = new System.Drawing.Point(1211, 127);
 			this.ratelimitcheck.Name = "ratelimitcheck";
 			this.ratelimitcheck.Size = new System.Drawing.Size(104, 24);
 			this.ratelimitcheck.TabIndex = 13;
@@ -271,7 +288,7 @@ namespace Youtube_DL
 			// outputtemplatebox
 			// 
 			this.outputtemplatebox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.outputtemplatebox.Location = new System.Drawing.Point(995, 159);
+			this.outputtemplatebox.Location = new System.Drawing.Point(1315, 159);
 			this.outputtemplatebox.Name = "outputtemplatebox";
 			this.outputtemplatebox.Size = new System.Drawing.Size(257, 20);
 			this.outputtemplatebox.TabIndex = 16;
@@ -279,7 +296,7 @@ namespace Youtube_DL
 			// outputtemplatecheck
 			// 
 			this.outputtemplatecheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.outputtemplatecheck.Location = new System.Drawing.Point(891, 157);
+			this.outputtemplatecheck.Location = new System.Drawing.Point(1211, 157);
 			this.outputtemplatecheck.Name = "outputtemplatecheck";
 			this.outputtemplatecheck.Size = new System.Drawing.Size(113, 24);
 			this.outputtemplatecheck.TabIndex = 15;
@@ -289,7 +306,7 @@ namespace Youtube_DL
 			// overwritecheck
 			// 
 			this.overwritecheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.overwritecheck.Location = new System.Drawing.Point(891, 187);
+			this.overwritecheck.Location = new System.Drawing.Point(1211, 187);
 			this.overwritecheck.Name = "overwritecheck";
 			this.overwritecheck.Size = new System.Drawing.Size(113, 24);
 			this.overwritecheck.TabIndex = 17;
@@ -299,7 +316,7 @@ namespace Youtube_DL
 			// thumbcheck
 			// 
 			this.thumbcheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.thumbcheck.Location = new System.Drawing.Point(891, 217);
+			this.thumbcheck.Location = new System.Drawing.Point(1211, 217);
 			this.thumbcheck.Name = "thumbcheck";
 			this.thumbcheck.Size = new System.Drawing.Size(104, 24);
 			this.thumbcheck.TabIndex = 18;
@@ -309,7 +326,7 @@ namespace Youtube_DL
 			// quietcheck
 			// 
 			this.quietcheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.quietcheck.Location = new System.Drawing.Point(891, 247);
+			this.quietcheck.Location = new System.Drawing.Point(1211, 247);
 			this.quietcheck.Name = "quietcheck";
 			this.quietcheck.Size = new System.Drawing.Size(104, 24);
 			this.quietcheck.TabIndex = 19;
@@ -319,7 +336,7 @@ namespace Youtube_DL
 			// verbosecheck
 			// 
 			this.verbosecheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.verbosecheck.Location = new System.Drawing.Point(995, 247);
+			this.verbosecheck.Location = new System.Drawing.Point(1315, 247);
 			this.verbosecheck.Name = "verbosecheck";
 			this.verbosecheck.Size = new System.Drawing.Size(104, 24);
 			this.verbosecheck.TabIndex = 20;
@@ -329,7 +346,7 @@ namespace Youtube_DL
 			// nocertcheck
 			// 
 			this.nocertcheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.nocertcheck.Location = new System.Drawing.Point(1105, 247);
+			this.nocertcheck.Location = new System.Drawing.Point(1425, 247);
 			this.nocertcheck.Name = "nocertcheck";
 			this.nocertcheck.Size = new System.Drawing.Size(144, 24);
 			this.nocertcheck.TabIndex = 21;
@@ -350,7 +367,7 @@ namespace Youtube_DL
 			"bestaudio",
 			"worstaudio",
 			"custom"});
-			this.comboBox1.Location = new System.Drawing.Point(995, 277);
+			this.comboBox1.Location = new System.Drawing.Point(1315, 277);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(121, 21);
 			this.comboBox1.TabIndex = 22;
@@ -358,7 +375,7 @@ namespace Youtube_DL
 			// qualitylabel
 			// 
 			this.qualitylabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.qualitylabel.Location = new System.Drawing.Point(889, 280);
+			this.qualitylabel.Location = new System.Drawing.Point(1209, 280);
 			this.qualitylabel.Name = "qualitylabel";
 			this.qualitylabel.Size = new System.Drawing.Size(100, 17);
 			this.qualitylabel.TabIndex = 23;
@@ -367,7 +384,7 @@ namespace Youtube_DL
 			// customqual
 			// 
 			this.customqual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.customqual.Location = new System.Drawing.Point(1122, 277);
+			this.customqual.Location = new System.Drawing.Point(1442, 277);
 			this.customqual.Name = "customqual";
 			this.customqual.Size = new System.Drawing.Size(130, 20);
 			this.customqual.TabIndex = 24;
@@ -375,7 +392,7 @@ namespace Youtube_DL
 			// subcheck
 			// 
 			this.subcheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.subcheck.Location = new System.Drawing.Point(891, 304);
+			this.subcheck.Location = new System.Drawing.Point(1211, 304);
 			this.subcheck.Name = "subcheck";
 			this.subcheck.Size = new System.Drawing.Size(104, 24);
 			this.subcheck.TabIndex = 25;
@@ -385,7 +402,7 @@ namespace Youtube_DL
 			// autosubcheck
 			// 
 			this.autosubcheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.autosubcheck.Location = new System.Drawing.Point(1001, 304);
+			this.autosubcheck.Location = new System.Drawing.Point(1321, 304);
 			this.autosubcheck.Name = "autosubcheck";
 			this.autosubcheck.Size = new System.Drawing.Size(125, 24);
 			this.autosubcheck.TabIndex = 26;
@@ -401,7 +418,7 @@ namespace Youtube_DL
 			this.authgroupbox.Controls.Add(this.passwordcheck);
 			this.authgroupbox.Controls.Add(this.usernamebox);
 			this.authgroupbox.Controls.Add(this.usercheck);
-			this.authgroupbox.Location = new System.Drawing.Point(891, 334);
+			this.authgroupbox.Location = new System.Drawing.Point(1211, 334);
 			this.authgroupbox.Name = "authgroupbox";
 			this.authgroupbox.Size = new System.Drawing.Size(361, 107);
 			this.authgroupbox.TabIndex = 27;
@@ -465,9 +482,9 @@ namespace Youtube_DL
 			// DownloadButton
 			// 
 			this.DownloadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.DownloadButton.Location = new System.Drawing.Point(891, 491);
+			this.DownloadButton.Location = new System.Drawing.Point(1215, 491);
 			this.DownloadButton.Name = "DownloadButton";
-			this.DownloadButton.Size = new System.Drawing.Size(365, 23);
+			this.DownloadButton.Size = new System.Drawing.Size(75, 23);
 			this.DownloadButton.TabIndex = 28;
 			this.DownloadButton.Text = "Download";
 			this.DownloadButton.UseVisualStyleBackColor = true;
@@ -476,7 +493,7 @@ namespace Youtube_DL
 			// listqualbutton
 			// 
 			this.listqualbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.listqualbutton.Location = new System.Drawing.Point(1177, 303);
+			this.listqualbutton.Location = new System.Drawing.Point(1497, 303);
 			this.listqualbutton.Name = "listqualbutton";
 			this.listqualbutton.Size = new System.Drawing.Size(75, 23);
 			this.listqualbutton.TabIndex = 29;
@@ -484,11 +501,27 @@ namespace Youtube_DL
 			this.listqualbutton.UseVisualStyleBackColor = true;
 			this.listqualbutton.Click += new System.EventHandler(this.ListqualbuttonClick);
 			// 
+			// saveFileDialog1
+			// 
+			this.saveFileDialog1.Filter = "All files|*.*";
+			this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveFileDialog1FileOk);
+			// 
+			// saveasButton
+			// 
+			this.saveasButton.Location = new System.Drawing.Point(1296, 491);
+			this.saveasButton.Name = "saveasButton";
+			this.saveasButton.Size = new System.Drawing.Size(75, 23);
+			this.saveasButton.TabIndex = 30;
+			this.saveasButton.Text = "Save as...";
+			this.saveasButton.UseVisualStyleBackColor = true;
+			this.saveasButton.Click += new System.EventHandler(this.SaveasButtonClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1264, 681);
+			this.ClientSize = new System.Drawing.Size(1584, 861);
+			this.Controls.Add(this.saveasButton);
 			this.Controls.Add(this.listqualbutton);
 			this.Controls.Add(this.DownloadButton);
 			this.Controls.Add(this.authgroupbox);
