@@ -53,6 +53,8 @@ namespace Youtube_DL
 		private System.Windows.Forms.Button goButton;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 		private System.Windows.Forms.Button saveasButton;
+		private System.Windows.Forms.CheckBox extaudioCheck;
+		private System.Windows.Forms.ComboBox comboBox2;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -115,6 +117,8 @@ namespace Youtube_DL
 			this.listqualbutton = new System.Windows.Forms.Button();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.saveasButton = new System.Windows.Forms.Button();
+			this.extaudioCheck = new System.Windows.Forms.CheckBox();
+			this.comboBox2 = new System.Windows.Forms.ComboBox();
 			this.groupBox1.SuspendLayout();
 			this.authgroupbox.SuspendLayout();
 			this.SuspendLayout();
@@ -516,11 +520,41 @@ namespace Youtube_DL
 			this.saveasButton.UseVisualStyleBackColor = true;
 			this.saveasButton.Click += new System.EventHandler(this.SaveasButtonClick);
 			// 
+			// extaudioCheck
+			// 
+			this.extaudioCheck.Location = new System.Drawing.Point(1410, 187);
+			this.extaudioCheck.Name = "extaudioCheck";
+			this.extaudioCheck.Size = new System.Drawing.Size(166, 24);
+			this.extaudioCheck.TabIndex = 31;
+			this.extaudioCheck.Text = "Extract Audio from video files";
+			this.extaudioCheck.UseVisualStyleBackColor = true;
+			this.extaudioCheck.CheckedChanged += new System.EventHandler(this.ExtaudioCheckCheckedChanged);
+			// 
+			// comboBox2
+			// 
+			this.comboBox2.Enabled = false;
+			this.comboBox2.FormattingEnabled = true;
+			this.comboBox2.Items.AddRange(new object[] {
+			"best",
+			"aac",
+			"vorbis",
+			"mp3",
+			"m4a",
+			"opus",
+			"wav"});
+			this.comboBox2.Location = new System.Drawing.Point(1410, 217);
+			this.comboBox2.Name = "comboBox2";
+			this.comboBox2.Size = new System.Drawing.Size(166, 21);
+			this.comboBox2.TabIndex = 32;
+			this.comboBox2.Text = "mp3";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1584, 861);
+			this.Controls.Add(this.comboBox2);
+			this.Controls.Add(this.extaudioCheck);
 			this.Controls.Add(this.saveasButton);
 			this.Controls.Add(this.listqualbutton);
 			this.Controls.Add(this.DownloadButton);

@@ -122,6 +122,10 @@ namespace Youtube_DL
 					ytdlargs = ytdlargs + "--write-auto-sub ";
 				}
 			}
+			if(extaudioCheck.Checked == true)
+			{
+				ytdlargs = ytdlargs + "--extract-audio --audio-format " + comboBox2.Text + " ";
+			}
 			if(flagoptbox.Text != "")
 			{
 				ytdlargs = ytdlargs + flagoptbox.Text;
@@ -147,6 +151,17 @@ namespace Youtube_DL
 		void SaveasButtonClick(object sender, EventArgs e)
 		{
 			saveFileDialog1.ShowDialog();
+		}
+		void ExtaudioCheckCheckedChanged(object sender, EventArgs e)
+		{
+			if(extaudioCheck.Checked)
+			{
+				comboBox2.Enabled = true;
+			}
+			else
+			{
+				comboBox2.Enabled = false;
+			}
 		}
 	}
 }
