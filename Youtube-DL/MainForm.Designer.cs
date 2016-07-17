@@ -136,8 +136,8 @@ namespace Youtube_DL
 			// webBrowser1
 			// 
 			this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+									| System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
 			this.webBrowser1.Location = new System.Drawing.Point(6, 46);
 			this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
 			this.webBrowser1.Name = "webBrowser1";
@@ -160,7 +160,7 @@ namespace Youtube_DL
 			// urlBox
 			// 
 			this.urlBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+									| System.Windows.Forms.AnchorStyles.Right)));
 			this.urlBox.Location = new System.Drawing.Point(169, 20);
 			this.urlBox.Name = "urlBox";
 			this.urlBox.Size = new System.Drawing.Size(937, 20);
@@ -169,8 +169,8 @@ namespace Youtube_DL
 			// groupBox1
 			// 
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+									| System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBox1.Controls.Add(this.goButton);
 			this.groupBox1.Controls.Add(this.YTButton);
 			this.groupBox1.Controls.Add(this.backButton);
@@ -362,15 +362,15 @@ namespace Youtube_DL
 			this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.comboBox1.FormattingEnabled = true;
 			this.comboBox1.Items.AddRange(new object[] {
-			"Choose one:",
-			"",
-			"best",
-			"worst",
-			"bestvideo",
-			"worstvideo",
-			"bestaudio",
-			"worstaudio",
-			"custom"});
+									"Choose one:",
+									"",
+									"best",
+									"worst",
+									"bestvideo",
+									"worstvideo",
+									"bestaudio",
+									"worstaudio",
+									"custom"});
 			this.comboBox1.Location = new System.Drawing.Point(1315, 277);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(121, 21);
@@ -512,6 +512,7 @@ namespace Youtube_DL
 			// 
 			// saveasButton
 			// 
+			this.saveasButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.saveasButton.Location = new System.Drawing.Point(1296, 491);
 			this.saveasButton.Name = "saveasButton";
 			this.saveasButton.Size = new System.Drawing.Size(75, 23);
@@ -522,6 +523,7 @@ namespace Youtube_DL
 			// 
 			// extaudioCheck
 			// 
+			this.extaudioCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.extaudioCheck.Location = new System.Drawing.Point(1410, 187);
 			this.extaudioCheck.Name = "extaudioCheck";
 			this.extaudioCheck.Size = new System.Drawing.Size(166, 24);
@@ -532,16 +534,17 @@ namespace Youtube_DL
 			// 
 			// comboBox2
 			// 
+			this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.comboBox2.Enabled = false;
 			this.comboBox2.FormattingEnabled = true;
 			this.comboBox2.Items.AddRange(new object[] {
-			"best",
-			"aac",
-			"vorbis",
-			"mp3",
-			"m4a",
-			"opus",
-			"wav"});
+									"best",
+									"aac",
+									"vorbis",
+									"mp3",
+									"m4a",
+									"opus",
+									"wav"});
 			this.comboBox2.Location = new System.Drawing.Point(1410, 217);
 			this.comboBox2.Name = "comboBox2";
 			this.comboBox2.Size = new System.Drawing.Size(166, 21);
@@ -592,7 +595,6 @@ namespace Youtube_DL
 			this.authgroupbox.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
 		}
 	}
 }
