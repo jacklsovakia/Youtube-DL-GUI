@@ -18,7 +18,6 @@ namespace Youtube_DL
 		private System.Windows.Forms.WebBrowser webBrowser1;
 		private System.Windows.Forms.Button YTButton;
 		private System.Windows.Forms.TextBox urlBox;
-		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Button updButton;
 		private System.Windows.Forms.TextBox flagoptbox;
 		private System.Windows.Forms.Label flagoptboxlabel;
@@ -82,7 +81,6 @@ namespace Youtube_DL
 			this.webBrowser1 = new System.Windows.Forms.WebBrowser();
 			this.YTButton = new System.Windows.Forms.Button();
 			this.urlBox = new System.Windows.Forms.TextBox();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.goButton = new System.Windows.Forms.Button();
 			this.updButton = new System.Windows.Forms.Button();
 			this.flagoptbox = new System.Windows.Forms.TextBox();
@@ -119,15 +117,15 @@ namespace Youtube_DL
 			this.saveasButton = new System.Windows.Forms.Button();
 			this.extaudioCheck = new System.Windows.Forms.CheckBox();
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
-			this.groupBox1.SuspendLayout();
+			this.CommandBox = new System.Windows.Forms.TextBox();
 			this.authgroupbox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// backButton
 			// 
-			this.backButton.Location = new System.Drawing.Point(6, 19);
+			this.backButton.Location = new System.Drawing.Point(8, 0);
 			this.backButton.Name = "backButton";
-			this.backButton.Size = new System.Drawing.Size(75, 23);
+			this.backButton.Size = new System.Drawing.Size(75, 20);
 			this.backButton.TabIndex = 0;
 			this.backButton.Text = "Back";
 			this.backButton.UseVisualStyleBackColor = true;
@@ -138,59 +136,42 @@ namespace Youtube_DL
 			this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
-			this.webBrowser1.Location = new System.Drawing.Point(6, 46);
+			this.webBrowser1.Location = new System.Drawing.Point(0, 25);
 			this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
 			this.webBrowser1.Name = "webBrowser1";
 			this.webBrowser1.ScriptErrorsSuppressed = true;
-			this.webBrowser1.Size = new System.Drawing.Size(1181, 785);
-			this.webBrowser1.TabIndex = 1;
+			this.webBrowser1.Size = new System.Drawing.Size(1205, 835);
+			this.webBrowser1.TabIndex = 4;
 			this.webBrowser1.Url = new System.Uri("http://youtube.com", System.UriKind.Absolute);
 			this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.WebBrowser1Navigated);
 			// 
 			// YTButton
 			// 
-			this.YTButton.Location = new System.Drawing.Point(87, 19);
+			this.YTButton.Location = new System.Drawing.Point(89, 0);
 			this.YTButton.Name = "YTButton";
-			this.YTButton.Size = new System.Drawing.Size(75, 23);
-			this.YTButton.TabIndex = 2;
+			this.YTButton.Size = new System.Drawing.Size(75, 20);
+			this.YTButton.TabIndex = 1;
 			this.YTButton.Text = "Youtube";
 			this.YTButton.UseVisualStyleBackColor = true;
 			this.YTButton.Click += new System.EventHandler(this.YTButtonClick);
 			// 
 			// urlBox
 			// 
+			this.urlBox.AllowDrop = true;
 			this.urlBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
-			this.urlBox.Location = new System.Drawing.Point(169, 20);
+			this.urlBox.Location = new System.Drawing.Point(171, 0);
 			this.urlBox.Name = "urlBox";
 			this.urlBox.Size = new System.Drawing.Size(937, 20);
-			this.urlBox.TabIndex = 3;
-			// 
-			// groupBox1
-			// 
-			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBox1.Controls.Add(this.goButton);
-			this.groupBox1.Controls.Add(this.YTButton);
-			this.groupBox1.Controls.Add(this.backButton);
-			this.groupBox1.Controls.Add(this.urlBox);
-			this.groupBox1.Controls.Add(this.webBrowser1);
-			this.groupBox1.Location = new System.Drawing.Point(12, 12);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.groupBox1.Size = new System.Drawing.Size(1193, 837);
-			this.groupBox1.TabIndex = 4;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Browser";
+			this.urlBox.TabIndex = 2;
 			// 
 			// goButton
 			// 
 			this.goButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.goButton.Location = new System.Drawing.Point(1112, 18);
+			this.goButton.Location = new System.Drawing.Point(1114, 0);
 			this.goButton.Name = "goButton";
-			this.goButton.Size = new System.Drawing.Size(75, 23);
-			this.goButton.TabIndex = 4;
+			this.goButton.Size = new System.Drawing.Size(75, 20);
+			this.goButton.TabIndex = 3;
 			this.goButton.Text = "Go";
 			this.goButton.UseVisualStyleBackColor = true;
 			this.goButton.Click += new System.EventHandler(this.GoButtonClick);
@@ -202,6 +183,7 @@ namespace Youtube_DL
 			this.updButton.Name = "updButton";
 			this.updButton.Size = new System.Drawing.Size(133, 23);
 			this.updButton.TabIndex = 5;
+			this.updButton.TabStop = false;
 			this.updButton.Text = "Update (Must be admin)";
 			this.updButton.UseVisualStyleBackColor = true;
 			this.updButton.Click += new System.EventHandler(this.UpdButtonClick);
@@ -213,6 +195,7 @@ namespace Youtube_DL
 			this.flagoptbox.Name = "flagoptbox";
 			this.flagoptbox.Size = new System.Drawing.Size(361, 20);
 			this.flagoptbox.TabIndex = 6;
+			this.flagoptbox.TabStop = false;
 			// 
 			// flagoptboxlabel
 			// 
@@ -230,6 +213,7 @@ namespace Youtube_DL
 			this.playliststartcheck.Name = "playliststartcheck";
 			this.playliststartcheck.Size = new System.Drawing.Size(104, 24);
 			this.playliststartcheck.TabIndex = 8;
+			this.playliststartcheck.TabStop = false;
 			this.playliststartcheck.Text = "Playlist Start #: ";
 			this.playliststartcheck.UseVisualStyleBackColor = true;
 			// 
@@ -240,6 +224,7 @@ namespace Youtube_DL
 			this.playliststartbox.Name = "playliststartbox";
 			this.playliststartbox.Size = new System.Drawing.Size(257, 20);
 			this.playliststartbox.TabIndex = 9;
+			this.playliststartbox.TabStop = false;
 			// 
 			// playlistendbox
 			// 
@@ -248,6 +233,7 @@ namespace Youtube_DL
 			this.playlistendbox.Name = "playlistendbox";
 			this.playlistendbox.Size = new System.Drawing.Size(257, 20);
 			this.playlistendbox.TabIndex = 11;
+			this.playlistendbox.TabStop = false;
 			// 
 			// playlistendcheck
 			// 
@@ -256,6 +242,7 @@ namespace Youtube_DL
 			this.playlistendcheck.Name = "playlistendcheck";
 			this.playlistendcheck.Size = new System.Drawing.Size(104, 24);
 			this.playlistendcheck.TabIndex = 10;
+			this.playlistendcheck.TabStop = false;
 			this.playlistendcheck.Text = "Playlist End #: ";
 			this.playlistendcheck.UseVisualStyleBackColor = true;
 			// 
@@ -268,6 +255,7 @@ namespace Youtube_DL
 			this.disableplaylistcheck.Name = "disableplaylistcheck";
 			this.disableplaylistcheck.Size = new System.Drawing.Size(122, 24);
 			this.disableplaylistcheck.TabIndex = 12;
+			this.disableplaylistcheck.TabStop = false;
 			this.disableplaylistcheck.Text = "Disable Playlist";
 			this.disableplaylistcheck.UseVisualStyleBackColor = true;
 			// 
@@ -278,6 +266,7 @@ namespace Youtube_DL
 			this.ratelimitbox.Name = "ratelimitbox";
 			this.ratelimitbox.Size = new System.Drawing.Size(257, 20);
 			this.ratelimitbox.TabIndex = 14;
+			this.ratelimitbox.TabStop = false;
 			// 
 			// ratelimitcheck
 			// 
@@ -286,6 +275,7 @@ namespace Youtube_DL
 			this.ratelimitcheck.Name = "ratelimitcheck";
 			this.ratelimitcheck.Size = new System.Drawing.Size(104, 24);
 			this.ratelimitcheck.TabIndex = 13;
+			this.ratelimitcheck.TabStop = false;
 			this.ratelimitcheck.Text = "Limit Rate:";
 			this.ratelimitcheck.UseVisualStyleBackColor = true;
 			// 
@@ -296,6 +286,7 @@ namespace Youtube_DL
 			this.outputtemplatebox.Name = "outputtemplatebox";
 			this.outputtemplatebox.Size = new System.Drawing.Size(257, 20);
 			this.outputtemplatebox.TabIndex = 16;
+			this.outputtemplatebox.TabStop = false;
 			// 
 			// outputtemplatecheck
 			// 
@@ -304,6 +295,7 @@ namespace Youtube_DL
 			this.outputtemplatecheck.Name = "outputtemplatecheck";
 			this.outputtemplatecheck.Size = new System.Drawing.Size(113, 24);
 			this.outputtemplatecheck.TabIndex = 15;
+			this.outputtemplatecheck.TabStop = false;
 			this.outputtemplatecheck.Text = "Output Template:";
 			this.outputtemplatecheck.UseVisualStyleBackColor = true;
 			// 
@@ -314,6 +306,7 @@ namespace Youtube_DL
 			this.overwritecheck.Name = "overwritecheck";
 			this.overwritecheck.Size = new System.Drawing.Size(113, 24);
 			this.overwritecheck.TabIndex = 17;
+			this.overwritecheck.TabStop = false;
 			this.overwritecheck.Text = "Disable Overwrite";
 			this.overwritecheck.UseVisualStyleBackColor = true;
 			// 
@@ -324,6 +317,7 @@ namespace Youtube_DL
 			this.thumbcheck.Name = "thumbcheck";
 			this.thumbcheck.Size = new System.Drawing.Size(104, 24);
 			this.thumbcheck.TabIndex = 18;
+			this.thumbcheck.TabStop = false;
 			this.thumbcheck.Text = "Write Thumbnail";
 			this.thumbcheck.UseVisualStyleBackColor = true;
 			// 
@@ -334,6 +328,7 @@ namespace Youtube_DL
 			this.quietcheck.Name = "quietcheck";
 			this.quietcheck.Size = new System.Drawing.Size(104, 24);
 			this.quietcheck.TabIndex = 19;
+			this.quietcheck.TabStop = false;
 			this.quietcheck.Text = "Quiet";
 			this.quietcheck.UseVisualStyleBackColor = true;
 			// 
@@ -344,6 +339,7 @@ namespace Youtube_DL
 			this.verbosecheck.Name = "verbosecheck";
 			this.verbosecheck.Size = new System.Drawing.Size(104, 24);
 			this.verbosecheck.TabIndex = 20;
+			this.verbosecheck.TabStop = false;
 			this.verbosecheck.Text = "Verbose";
 			this.verbosecheck.UseVisualStyleBackColor = true;
 			// 
@@ -354,6 +350,7 @@ namespace Youtube_DL
 			this.nocertcheck.Name = "nocertcheck";
 			this.nocertcheck.Size = new System.Drawing.Size(144, 24);
 			this.nocertcheck.TabIndex = 21;
+			this.nocertcheck.TabStop = false;
 			this.nocertcheck.Text = "Don\'t Check Certificates";
 			this.nocertcheck.UseVisualStyleBackColor = true;
 			// 
@@ -375,11 +372,12 @@ namespace Youtube_DL
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(121, 21);
 			this.comboBox1.TabIndex = 22;
+			this.comboBox1.TabStop = false;
 			// 
 			// qualitylabel
 			// 
 			this.qualitylabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.qualitylabel.Location = new System.Drawing.Point(1209, 280);
+			this.qualitylabel.Location = new System.Drawing.Point(1211, 280);
 			this.qualitylabel.Name = "qualitylabel";
 			this.qualitylabel.Size = new System.Drawing.Size(100, 17);
 			this.qualitylabel.TabIndex = 23;
@@ -392,6 +390,7 @@ namespace Youtube_DL
 			this.customqual.Name = "customqual";
 			this.customqual.Size = new System.Drawing.Size(130, 20);
 			this.customqual.TabIndex = 24;
+			this.customqual.TabStop = false;
 			// 
 			// subcheck
 			// 
@@ -400,6 +399,7 @@ namespace Youtube_DL
 			this.subcheck.Name = "subcheck";
 			this.subcheck.Size = new System.Drawing.Size(104, 24);
 			this.subcheck.TabIndex = 25;
+			this.subcheck.TabStop = false;
 			this.subcheck.Text = "Subtitles";
 			this.subcheck.UseVisualStyleBackColor = true;
 			// 
@@ -410,6 +410,7 @@ namespace Youtube_DL
 			this.autosubcheck.Name = "autosubcheck";
 			this.autosubcheck.Size = new System.Drawing.Size(125, 24);
 			this.autosubcheck.TabIndex = 26;
+			this.autosubcheck.TabStop = false;
 			this.autosubcheck.Text = "Automatic Subtitles";
 			this.autosubcheck.UseVisualStyleBackColor = true;
 			// 
@@ -436,6 +437,7 @@ namespace Youtube_DL
 			this.twoauthbox.Name = "twoauthbox";
 			this.twoauthbox.Size = new System.Drawing.Size(242, 20);
 			this.twoauthbox.TabIndex = 33;
+			this.twoauthbox.TabStop = false;
 			// 
 			// twoauthcheck
 			// 
@@ -444,6 +446,7 @@ namespace Youtube_DL
 			this.twoauthcheck.Name = "twoauthcheck";
 			this.twoauthcheck.Size = new System.Drawing.Size(104, 24);
 			this.twoauthcheck.TabIndex = 32;
+			this.twoauthcheck.TabStop = false;
 			this.twoauthcheck.Text = "2-Factor Auth";
 			this.twoauthcheck.UseVisualStyleBackColor = true;
 			// 
@@ -454,6 +457,7 @@ namespace Youtube_DL
 			this.passwordbox.Name = "passwordbox";
 			this.passwordbox.Size = new System.Drawing.Size(242, 20);
 			this.passwordbox.TabIndex = 31;
+			this.passwordbox.TabStop = false;
 			// 
 			// passwordcheck
 			// 
@@ -462,6 +466,7 @@ namespace Youtube_DL
 			this.passwordcheck.Name = "passwordcheck";
 			this.passwordcheck.Size = new System.Drawing.Size(104, 24);
 			this.passwordcheck.TabIndex = 30;
+			this.passwordcheck.TabStop = false;
 			this.passwordcheck.Text = "Password:";
 			this.passwordcheck.UseVisualStyleBackColor = true;
 			// 
@@ -472,6 +477,7 @@ namespace Youtube_DL
 			this.usernamebox.Name = "usernamebox";
 			this.usernamebox.Size = new System.Drawing.Size(242, 20);
 			this.usernamebox.TabIndex = 29;
+			this.usernamebox.TabStop = false;
 			// 
 			// usercheck
 			// 
@@ -480,6 +486,7 @@ namespace Youtube_DL
 			this.usercheck.Name = "usercheck";
 			this.usercheck.Size = new System.Drawing.Size(104, 24);
 			this.usercheck.TabIndex = 28;
+			this.usercheck.TabStop = false;
 			this.usercheck.Text = "Username:";
 			this.usercheck.UseVisualStyleBackColor = true;
 			// 
@@ -490,6 +497,7 @@ namespace Youtube_DL
 			this.DownloadButton.Name = "DownloadButton";
 			this.DownloadButton.Size = new System.Drawing.Size(75, 23);
 			this.DownloadButton.TabIndex = 28;
+			this.DownloadButton.TabStop = false;
 			this.DownloadButton.Text = "Download";
 			this.DownloadButton.UseVisualStyleBackColor = true;
 			this.DownloadButton.Click += new System.EventHandler(this.DownloadButtonClick);
@@ -501,6 +509,7 @@ namespace Youtube_DL
 			this.listqualbutton.Name = "listqualbutton";
 			this.listqualbutton.Size = new System.Drawing.Size(75, 23);
 			this.listqualbutton.TabIndex = 29;
+			this.listqualbutton.TabStop = false;
 			this.listqualbutton.Text = "List Qualities";
 			this.listqualbutton.UseVisualStyleBackColor = true;
 			this.listqualbutton.Click += new System.EventHandler(this.ListqualbuttonClick);
@@ -517,6 +526,7 @@ namespace Youtube_DL
 			this.saveasButton.Name = "saveasButton";
 			this.saveasButton.Size = new System.Drawing.Size(75, 23);
 			this.saveasButton.TabIndex = 30;
+			this.saveasButton.TabStop = false;
 			this.saveasButton.Text = "Save as...";
 			this.saveasButton.UseVisualStyleBackColor = true;
 			this.saveasButton.Click += new System.EventHandler(this.SaveasButtonClick);
@@ -528,6 +538,7 @@ namespace Youtube_DL
 			this.extaudioCheck.Name = "extaudioCheck";
 			this.extaudioCheck.Size = new System.Drawing.Size(166, 24);
 			this.extaudioCheck.TabIndex = 31;
+			this.extaudioCheck.TabStop = false;
 			this.extaudioCheck.Text = "Extract Audio from video files";
 			this.extaudioCheck.UseVisualStyleBackColor = true;
 			this.extaudioCheck.CheckedChanged += new System.EventHandler(this.ExtaudioCheckCheckedChanged);
@@ -549,16 +560,34 @@ namespace Youtube_DL
 			this.comboBox2.Name = "comboBox2";
 			this.comboBox2.Size = new System.Drawing.Size(166, 21);
 			this.comboBox2.TabIndex = 32;
+			this.comboBox2.TabStop = false;
 			this.comboBox2.Text = "mp3";
+			// 
+			// CommandBox
+			// 
+			this.CommandBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.CommandBox.Location = new System.Drawing.Point(1211, 520);
+			this.CommandBox.Name = "CommandBox";
+			this.CommandBox.ReadOnly = true;
+			this.CommandBox.Size = new System.Drawing.Size(365, 20);
+			this.CommandBox.TabIndex = 33;
+			this.CommandBox.TabStop = false;
 			// 
 			// MainForm
 			// 
+			this.AcceptButton = this.goButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1584, 861);
+			this.ClientSize = new System.Drawing.Size(1584, 862);
+			this.Controls.Add(this.CommandBox);
+			this.Controls.Add(this.goButton);
 			this.Controls.Add(this.comboBox2);
+			this.Controls.Add(this.YTButton);
 			this.Controls.Add(this.extaudioCheck);
+			this.Controls.Add(this.backButton);
 			this.Controls.Add(this.saveasButton);
+			this.Controls.Add(this.urlBox);
+			this.Controls.Add(this.webBrowser1);
 			this.Controls.Add(this.listqualbutton);
 			this.Controls.Add(this.DownloadButton);
 			this.Controls.Add(this.authgroupbox);
@@ -584,17 +613,15 @@ namespace Youtube_DL
 			this.Controls.Add(this.flagoptboxlabel);
 			this.Controls.Add(this.flagoptbox);
 			this.Controls.Add(this.updButton);
-			this.Controls.Add(this.groupBox1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Youtube-DL GUI";
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
 			this.authgroupbox.ResumeLayout(false);
 			this.authgroupbox.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.TextBox CommandBox;
 	}
 }

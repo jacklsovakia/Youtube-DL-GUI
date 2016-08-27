@@ -131,6 +131,7 @@ namespace Youtube_DL
 				ytdlargs = ytdlargs + flagoptbox.Text;
 			}
 			Process.Start("youtube-dl.exe", ytdlargs + " \"" + urlBox.Text + "\"");
+			CommandBox.Text = "youtube-dl.exe " + ytdlargs + " \"" + urlBox.Text + "\"";
 		}
 		void ListqualbuttonClick(object sender, EventArgs e)
 		{
