@@ -17,8 +17,8 @@ F:\Documents\SharpDevelop Projects\Youtube-DL\Youtube-DL-GUI\Youtube-DL\obj\Debu
 C:\Users\jackson\Documents\GitHub\Youtube-DL-GUI\Youtube-DL\bin\Debug\Youtube-DLGUI.exe.config
 C:\Users\jackson\Documents\GitHub\Youtube-DL-GUI\Youtube-DL\bin\Debug\Youtube-DLGUI.exe
 C:\Users\jackson\Documents\GitHub\Youtube-DL-GUI\Youtube-DL\bin\Debug\Youtube-DLGUI.pdb
-C:\Users\jackson\Documents\GitHub\Youtube-DL-GUI\Youtube-DL\obj\Debug\Youtube-DL.csprojResolveAssemblyReference.cache
 C:\Users\jackson\Documents\GitHub\Youtube-DL-GUI\Youtube-DL\obj\Debug\Youtube_DL.MainForm.resources
 C:\Users\jackson\Documents\GitHub\Youtube-DL-GUI\Youtube-DL\obj\Debug\Youtube-DL.csproj.GenerateResource.Cache
 C:\Users\jackson\Documents\GitHub\Youtube-DL-GUI\Youtube-DL\obj\Debug\Youtube-DLGUI.exe
 C:\Users\jackson\Documents\GitHub\Youtube-DL-GUI\Youtube-DL\obj\Debug\Youtube-DLGUI.pdb
+C:\Users\Jackson\Documents\GitHub\Youtube-DL-GUI\Youtube-DL\obj\Debug\Youtube-DL.csprojAssemblyReference.cache

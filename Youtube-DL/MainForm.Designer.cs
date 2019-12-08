@@ -181,10 +181,10 @@ namespace Youtube_DL
 			this.updButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.updButton.Location = new System.Drawing.Point(1211, 12);
 			this.updButton.Name = "updButton";
-			this.updButton.Size = new System.Drawing.Size(133, 23);
+			this.updButton.Size = new System.Drawing.Size(80, 23);
 			this.updButton.TabIndex = 5;
 			this.updButton.TabStop = false;
-			this.updButton.Text = "Update (Must be admin)";
+			this.updButton.Text = "Update";
 			this.updButton.UseVisualStyleBackColor = true;
 			this.updButton.Click += new System.EventHandler(this.UpdButtonClick);
 			// 
@@ -250,7 +250,7 @@ namespace Youtube_DL
 			// 
 			this.disableplaylistcheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.disableplaylistcheck.Checked = true;
-			this.disableplaylistcheck.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.disableplaylistcheck.CheckState = System.Windows.Forms.CheckState.Unchecked;
 			this.disableplaylistcheck.Location = new System.Drawing.Point(1211, 41);
 			this.disableplaylistcheck.Name = "disableplaylistcheck";
 			this.disableplaylistcheck.Size = new System.Drawing.Size(122, 24);
@@ -617,6 +617,7 @@ namespace Youtube_DL
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Youtube-DL GUI";
+			this.AcceptButton = goButton;
 			this.authgroupbox.ResumeLayout(false);
 			this.authgroupbox.PerformLayout();
 			this.ResumeLayout(false);
